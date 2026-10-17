@@ -48,8 +48,8 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link className="header-action" href="/platform">
-          Explore the architecture <ArrowUpRight size={15} />
+        <Link className="header-action" href="/contact">
+          Talk to sales <ArrowUpRight size={15} />
         </Link>
         <button
           className="menu-button"

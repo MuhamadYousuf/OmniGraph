@@ -1,6 +1,6 @@
 # OmniGraph enterprise showcase
 
-An independent, five-page Next.js App Router website. The folder owns its manifest, lockfile, dependency tree, routes, assets, and benchmark fixture. Next.js build and tracing roots are pinned to this directory.
+An independent Next.js App Router website. The folder owns its manifest, lockfile, dependency tree, routes, assets, and benchmark fixture. Next.js build and tracing roots are pinned to this directory.
 
 ## Local development
 
@@ -21,6 +21,17 @@ Open <http://localhost:3100>. After moving the folder, change into its new locat
 - `/solutions`: financial services, SaaS revenue operations, supply chain, and healthcare reference models.
 - `/security`: deployment perimeter, metadata-only payload demonstration, redaction policy, and audit integrity.
 - `/benchmarks`: measured local fixture, transparent comparison scope, cost model, hardware, and reproduction instructions.
+- `/contact`: sales inquiry form. Submissions are validated server-side and delivered through Resend; the recipient address is read only from server environment configuration.
+
+## Sales inquiry email
+
+The form sends inquiry details from the Next.js server to Resend. Before enabling it in Vercel, configure these environment variables in the project's settings for each environment that should send mail:
+
+- `RESEND_API_KEY`: a Resend API key with permission to send email.
+- `SALES_INBOX_EMAIL`: the private destination inbox. Set its value only in Vercel's server-side environment-variable settings; it is never included in client code.
+- `SALES_FROM_EMAIL`: a sender address on a domain verified with Resend.
+
+Redeploy after changing environment variables. Without all three values, the endpoint returns an explicit unavailable response and does not claim that an inquiry was sent. Keep all values out of `NEXT_PUBLIC_*` variables and source control.
 
 ## Verification
 

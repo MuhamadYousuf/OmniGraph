@@ -9,6 +9,7 @@ export const navigation = [
   { href: "/solutions", label: "Solutions" },
   { href: "/security", label: "Security" },
   { href: "/benchmarks", label: "Benchmarks" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export const cypher = `// Run once before loading the batch
